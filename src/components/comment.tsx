@@ -1,4 +1,3 @@
-
 'use client'
 import React, { useState, useEffect } from 'react';
 import { FaTrash } from 'react-icons/fa';
@@ -33,25 +32,25 @@ const CommentBox = () => {
   };
 
   return (
-    <div className="p-4">
-      <h1 className="ml-24 text-3xl font-bold mt-4 text-yellow-500">Comments</h1>
-      <div className="ml-24 mt-4">
+    <div className="p-4 sm:px-6 md:px-8">
+      <h1 className="text-3xl font-bold mt-4 text-yellow-500 text-center sm:text-left">Comments</h1>
+      <div className="mt-4 sm:mt-6">
         <input
           type="text"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
           placeholder="Write your comment"
-          className="border border-gray-300 rounded-lg w-80 p-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+          className="border border-gray-300 rounded-lg w-full sm:w-80 p-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
         />
         <br />
         <button
-          className="mt-3 w-36 py-2 bg-yellow-500 text-white font-medium rounded-lg hover:bg-yellow-600 transition duration-300"
+          className="mt-3 w-full sm:w-36 py-2 bg-yellow-500 text-white font-medium rounded-lg hover:bg-yellow-600 transition duration-300"
           onClick={addComments}
         >
           Add Comment
         </button>
       </div>
-      <div className="mt-6 ml-24">
+      <div className="mt-6 sm:mt-8">
         <h2 className="text-lg font-semibold text-gray-700">All Comments:</h2>
         {comments.length === 0 ? (
           <p className="text-gray-500 mt-2">No comments yet. Add your comment!</p>
@@ -60,7 +59,7 @@ const CommentBox = () => {
             {comments.map((data, index) => (
               <li
                 key={index}
-                className="flex justify-between  bg-gray-100 p-3 rounded-lg shadow-sm"
+                className="flex justify-between bg-gray-100 p-3 rounded-lg shadow-sm"
               >
                 <span className="text-gray-800">{data}</span>
                 <button
